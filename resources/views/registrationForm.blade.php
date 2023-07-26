@@ -11,14 +11,12 @@
               </div>
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black wow fadeInUp" data-wow-delay="0.1s">
-  
-                  <form action="" method="post" id="registerForm">
-  
+                  <form action="{{url('registrationForm')}}" method="post" id="registerForm">
+                    @csrf
                     <div class="d-flex align-items-center mb-1 pb-1">
                       <i class="fas fa-cubes fa-2x me-3 loginLogo "></i>
                       <span class="h1 fw-bold mb-0 ">Logo</span>
                     </div>
-  
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form2Example16">Name <span class="text-danger">*</span></label>
                       <div class="input-group">
@@ -26,7 +24,6 @@
                       </div>
                       {{-- <span class="text-danger erName"><?php echo $erName; ?></span> --}}
                     </div>
-  
                     <div class="form-outline mb-4">
                       <label class="form-label" for="">Email address <span class="text-danger">*</span></label>
                       <div class="input-group">
@@ -34,24 +31,6 @@
                       </div>
                       {{-- <span class="text-danger erEmail"><?php echo $erEmail ?></span> --}}
                     </div>
-  
-                    <div class="form-outline mb-4">
-                      <label class="form-label" for="">Mobile Number <span class="text-danger">*</span></label>
-                      <div class="input-group">
-                        <input type="tel" value=">" id="mobile" name="mobile" class="form-control border  border-dark rounded-0 " />
-                      </div>
-                      {{-- <span class="text-danger erMobile"><?php echo $erMobile; ?></span> --}}
-                    </div>
-  
-                    <div class="form-outline mb-4">
-                      <label class="form-label" for="">Your First School Name <span class="text-danger">*</span></label>
-                      <span class="text-muted fst-italic fw-lighter">For Security Purpose</span>
-                      <div class="input-group">
-                        <input type="text" value="<" id="school" name="school" class="form-control border  border-dark rounded-0 " />
-                      </div>
-                      {{-- <span class="text-danger erSchool"><?php echo $erSchool; ?></span> --}}
-                    </div>
-  
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form2Example27">Password <span class="text-danger">*</span></label>
                       <div class="input-group">
@@ -62,41 +41,35 @@
                       </div>
                       {{-- <span class="text-danger erRegiPass"><?php echo $erPassword; ?></span> --}}
                     </div>
-  
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form2Example27">Re-enter Password <span class="text-danger">*</span></label>
                       <div class="input-group">
-                        <input type="password" value="" id="regiRePass" name="repassword" class="form-control border  border-dark border-end-0 rounded-0" />
+                        <input type="password" value="" id="password_confirmation" name="password_confirmation" class="form-control border  border-dark border-end-0 rounded-0" />
                         <div class="input-group-append">
                           <span class="fa fa-eye text-center input-group-text btn border border-start-0 border-dark rounded-0 togglePassword"></span>
                         </div>
                       </div>
                       {{-- <span class="text-danger erRegiRePass"><?php echo $erRePassword; ?></span> --}}
                     </div>
-  
-                    <div class="form-outline mb-4 user d-none">
+                    {{-- <div class="form-outline mb-4 user d-none">
                       <label class="form-label" for=""> OTP <span class="text-danger">*</span></label>
                       <div class="">
                         <input type="text" value="" id="userOtp" name="otp" class="border  border-dark rounded-0 " />
-                      </div>
+                      </div> --}}
                       {{-- <span class="text-danger successOtp"><?php echo $erOtp; ?></span> --}}
-                    </div>
-  
+                    {{-- </div> --}}
                     <div class="mb-4 d-flex">
                       <input type="text" id="randOtp" hidden value="">
                       <div class="inputData me-3">
-                        <input id="verification" class=" btn btn-success py-2 px-3 btn-block " type="submit" name="verification" value="Verification">
-  
+                        <button type="submit" class="btn btn-success py-2 px-3 btn-block">Register</button>
+                        {{-- <input id="verification" class=" btn btn-success py-2 px-3 btn-block " type="submit" name="verification" value="Verification"> --}}
                       </div>
                       <a href="{{url('/')}}" class=" btn btn-danger py-2 px-3 btn-block">Cancle</a>
                     </div>
-  
                     <p class="loginMessage">Already have an account? <a href="{{route('login')}}" class="loginLink">Login here</a></p>
                   </form>
-  
                 </div>
               </div>
-  
             </div>
           </div>
         </div>
