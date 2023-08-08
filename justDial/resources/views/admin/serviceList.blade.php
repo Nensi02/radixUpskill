@@ -37,7 +37,11 @@
                                             <td>{{$item->nId}}</td>
                                             <td>{{$item->sServiceName}}</td>
                                             <td>{{$item->sDescription}}</td>
-                                            <td>{{$item->nId}}</td>
+                                            <td>
+                                                <a href="" class="edit me-1"><span class="fa-regular fa-pen-to-square h5 text-dark"></span></a>
+                                                <input type="submit" class="btn btn-outline-primary deleteValue" id="{{$item->nId}}" name="delete" hidden>
+                                                <a href="" class="delete"><span class="fa-regular fa-trash-can h5 text-dark"></span></a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
